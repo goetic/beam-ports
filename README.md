@@ -9,7 +9,7 @@ a specific version of each.
 poudreire jail -c -j 143amd64 -v 14.3-RELEASE -a amd64
 
 poudriere ports -c
-poudriere ports -c -f erlang -m null -M /workspace/github/goetic/beam-ports -p beam
+poudriere ports -c -f beam -m null -M /workspace/github/goetic/beam-ports -p beam
 ```
 
 ``` shell

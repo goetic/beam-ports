@@ -1,0 +1,34 @@
+[doctor]
+checks = [
+  {name = "pkg dependencies", shell = "cat Pkgfile | xargs pkg check", remedy = "cat Pkgfile | xargs pkg install -y", platform = ["FreeBSD"]},
+  {name = "poudriere: default", shell = "poudriere ports -lq | cut -d' ' -f1 | grep default", remedy = "poudriere ports -c", platform = ["FreeBSD"]},
+  {name = "poudriere: beam", shell = "poudriere ports -lq | cut -d' ' -f1 | grep beam", remedy = "poudriere ports -c -f beam -m null -M ${PWD} -p beam", platform = ["FreeBSD"]},
+  {name = "poudriere: 14.3 jail", shell = "poudriere jail -lq | cut -d' ' -f1 | grep 143amd64", remedy = "poudriere jail -c -j 143amd64 -v 14.3-RELEASE -a amd64", platform = ["FreeBSD"]},
+]
+
+[test]
+checks = [
+]
+
+[audit]
+checks = [
+]
+
+[outdated]
+checks = [
+]
+
+[update]
+steps = [
+  { step = "git", command = "pull" },
+  { doctor = {} },
+]
+
+[shipit]
+steps = [
+  { audit = {} },
+  { update = {} },
+  { test = {} },
+  { step = "git", command = "push" },
+]
+
