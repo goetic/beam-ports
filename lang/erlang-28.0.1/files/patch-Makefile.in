@@ -5,7 +5,7 @@
  
  # Where Erlang/OTP is located
 -libdir_suffix	= /erlang
-+libdir_suffix	= /erlang28
++libdir_suffix	= /erlang-28.0.1
  erlang_libdir	= $(libdir)$(libdir_suffix)
  erlang_bindir	= $(erlang_libdir)/bin
  
