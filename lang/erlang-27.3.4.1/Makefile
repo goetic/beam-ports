@@ -5,7 +5,7 @@ CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-27.3.4.1
 DIST_SUBDIR=	erlang
 
-MAINTAINER=	erlang@FreeBSD.org
+MAINTAINER=	admin@goetic.dev
 COMMENT=	Functional programming language from Ericsson (version 27.3.4.1)
 WWW=		https://www.erlang.org/
 
