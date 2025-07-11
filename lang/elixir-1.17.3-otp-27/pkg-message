@@ -1,0 +1,19 @@
+[
+{ type: install
+  message: <<EOM
+Elixir requires a compatible Erlang/OTP runtime. Ensure that you have
+one of the following installed:
+
+- lang/erlang-27.3.4.1 or newer
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+Elixir requires a compatible Erlang/OTP runtime. Ensure that you have
+one of the following installed, as you prefer:
+
+- lang/erlang-27.3.4.1 or newer
+
+EOM
+}
+]
