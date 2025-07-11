@@ -1,0 +1,8 @@
+Erlang is a programming language for building massively scalable soft real-time systems
+with high availability requirements. It supports concurrency, distribution, and fault
+tolerance, and is used in telecoms, banking, e-commerce, and messaging.
+
+This port provides Erlang version 27.3.4.1 specifically, intended for developing OTP
+applications that require this exact version.
+
+WWW: https://www.erlang.org/
