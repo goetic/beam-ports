@@ -12,13 +12,13 @@ validated:
 beam: {
   url: "https://goetic-pkg.s3.us-east-2.amazonaws.com/beam/freebsd/${ABI}/latest",
   signature_type: "pubkey",
-  pubkey: "/usr/share/keys/pkg/trusted/beam-ports.pub",
+  pubkey: "/usr/local/etc/ssl/beam-ports.pub",
   enabled: yes
 }
 ```
 
 ``` shell
-cat > /usr/share/keys/pkg/trusted/beam-ports.pub
+cat > /usr/local/etc/ssl/beam-ports.pub
 -----BEGIN PUBLIC KEY-----
 MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAzRpocI3URq965dK7l3p2
 sEOKWwA+J1HTrbdG+K4VCNfB2b8tui37sp8Q24OMknfJixvey/kVEhWemN6cLHrV
