@@ -16,3 +16,8 @@ poudriere ports -c -f beam -m null -M /workspace/github/goetic/beam-ports -p bea
 ``` shell
 poudriere bulk -j 143amd64 -O beam lang/erlang-28.0.1
 ```
+
+``` shell
+poudriere pkgclean -A -j <jail>
+poudriere logclean -a -j <jail>
+```
