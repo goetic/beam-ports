@@ -10,7 +10,7 @@ validated:
 
 ``` shell
 beam: {
-  url: "https://goetic-pkg.s3.us-east-2.amazonaws.com/beam/freebsd${ABI}/latest",
+  url: "https://goetic-pkg.s3.us-east-2.amazonaws.com/beam/freebsd/${ABI}/latest",
   signature_type: "pubkey",
   pubkey: "/usr/share/keys/pkg/trusted/beam-ports.pub",
   enabled: yes
