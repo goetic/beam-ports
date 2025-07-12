@@ -9,16 +9,18 @@ Add the public key for the pkg repo, to ensure that signatures are properly
 validated:
 
 ``` shell
+cat <<'EOF' > /usr/local/etc/pkg/repos/beam.conf
 beam: {
   url: "https://goetic-pkg.s3.us-east-2.amazonaws.com/beam/freebsd/${ABI}/latest",
   signature_type: "pubkey",
   pubkey: "/usr/local/etc/ssl/beam-ports.pub",
   enabled: yes
 }
+EOF
 ```
 
 ``` shell
-cat > /usr/local/etc/ssl/beam-ports.pub
+cat <<'EOF' > /usr/local/etc/ssl/beam-ports.pub
 -----BEGIN PUBLIC KEY-----
 MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAzRpocI3URq965dK7l3p2
 sEOKWwA+J1HTrbdG+K4VCNfB2b8tui37sp8Q24OMknfJixvey/kVEhWemN6cLHrV
@@ -33,6 +35,7 @@ DGOapzEq8d01hlDWSSpBBW1xoi90aql0vXhjN2kqxtK7ZuNsY1514TTomv2hubYl
 l5tyuSbQ1rG/6SPZblXI6u/roZoZIZ6zQ3H6x4pnaq/2Y56kpG0bR2eGs6YX0uwM
 qLtzysaWPOVJ/Qp4daWoUnECAwEAAQ==
 -----END PUBLIC KEY-----
+EOF
 ```
 
 ``` shell
