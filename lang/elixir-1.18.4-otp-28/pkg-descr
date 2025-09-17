@@ -4,6 +4,6 @@ Erlang's abilities to build concurrent, distributed and fault-tolerant
 applications with hot code upgrades.
 
 This port provides Elixir version 1.18.4, compiled for Erlang major version
-27.
+28.
 
 WWW: https://elixir-lang.org
