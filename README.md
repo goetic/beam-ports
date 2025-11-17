@@ -62,3 +62,13 @@ poudriere bulk -j 143amd64 -O beam -f packages-default
 poudriere pkgclean -A -j <jail>
 poudriere logclean -a -j <jail>
 ```
+
+## Adding versions
+
+When adding a new version of Erlang or Elixir, the pkg-list may not
+be correct when copying from an older version. To print out a list of
+discrepencies, the following may be used:
+
+``` shell
+poudriere testport -j 143aarch64 -O beam -o lang/<package>
+```
