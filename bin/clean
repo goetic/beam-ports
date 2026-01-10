@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
 
+BOLD='\033[1m'
+RED='\033[31m'
+RESET='\033[0m'
+
 get_arch() {
   echo "$(uname -p)"
 }
@@ -7,9 +11,11 @@ get_arch() {
 main() {
   local arch="$(get_arch)"
 
+  printf "${BOLD}== Cleaning logs…${RESET}\n" >&2
   poudriere logclean -y -a -j "143${arch}"
   poudriere logclean -y -a -j "150${arch}"
 
+  printf "${BOLD}== Cleaning containers…${RESET}\n" >&2
   poudriere pkgclean -y -A -j "143${arch}"
   poudriere pkgclean -y -A -j "150${arch}"
 }

@@ -53,20 +53,20 @@ main() {
     exit 1
   fi
 
-  echo "== Building packages…" >&2
+  printf "${BOLD}== Building packages…${RESET}\n" >&2
   ./bin/build
   echo
 
-  echo "== Cleaning logs…" >&2
+  printf "${BOLD}== Cleaning logs…${RESET}\n" >&2
   poudriere logclean -y -a -j "143${arch}"
   poudriere logclean -y -a -j "150${arch}"
   echo
 
-  echo "== Uploading 14.3-RELEASE packages…" >&2
+  printf "${BOLD}== Uploading 14.3-RELEASE packages…${RESET}\n" >&2
   upload_packages "14" "143${arch}" "${arch}"
   echo
 
-  echo "== Uploading 15.0-RELEASE packages…" >&2
+  printf "${BOLD}== Uploading 15.0-RELEASE packages…${RESET}\n" >&2
   upload_packages "15" "150${arch}" "${arch}"
   echo
 }

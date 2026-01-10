@@ -2,6 +2,11 @@
 
 set -e
 
+BOLD='\033[1m'
+RED='\033[31m'
+RESET='\033[0m'
+YELLOW='\033[33m'
+
 create_beam_port() {
   poudriere ports -c -f beam -m null -M "$(pwd)" -p beam
 }
@@ -50,31 +55,31 @@ main() {
   local ports="$(get_ports)"
 
   if ! echo "${ports}" | grep -q "default"; then
-    echo "Creating port: default…" >&2
+    printf "${BOLD}== Creating port: default…${RESET}\n" >&2
     create_default_port
   else
-    echo "Creating port: default…             [skipped]" >&2
+    printf "${BOLD}== Creating port: default…             ${RESET}${YELLOW}[skipped]${RESET}\n" >&2
   fi
 
   if ! echo "${ports}" | grep -q "beam"; then
-    echo "Creating port: beam…" >&2
+    printf "${BOLD}== Creating port: beam…${RESET}\n" >&2
     create_beam_port
   else
-    echo "Creating port: beam…                [skipped]" >&2
+    printf "${BOLD}== Creating port: beam…                ${RESET}${YELLOW}[skipped]${RESET}\n" >&2
   fi
 
   if ! echo "${jails}" | grep -q "14.3-RELEASE"; then
-    echo "Creating jail: 14.3-RELEASE…" >&2
+    printf "${BOLD}== Creating jail: 14.3-RELEASE…${RESET}\n" >&2
     create_jail "14.3-RELEASE" "143${arch}" "${jail_arch}"
   else
-    echo "Creating jail: 14.3-RELEASE…        [skipped]" >&2
+    printf "${BOLD}== Creating jail: 14.3-RELEASE…        ${RESET}${YELLOW}[skipped]${RESET}\n" >&2
   fi
 
   if ! echo "${jails}" | grep -q "15.0-RELEASE"; then
-    echo "Creating jail: 15.0-RELEASE…" >&2
+    printf "${BOLD}== Creating jail: 15.0-RELEASE…${RESET}\n" >&2
     create_jail "15.0-RELEASE" "150${arch}" "${jail_arch}"
   else
-    echo "Creating jail: 15.0-RELEASE…        [skipped]" >&2
+    printf "${BOLD}== Creating jail: 15.0-RELEASE…        ${RESET}${YELLOW}[skipped]${RESET}\n" >&2
   fi
 }
 
