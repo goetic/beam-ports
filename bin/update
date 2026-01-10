@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
 
+BOLD='\033[1m'
+RED='\033[31m'
+RESET='\033[0m'
+
 get_arch() {
   echo "$(uname -p)"
 }
@@ -7,15 +11,15 @@ get_arch() {
 main() {
   local arch="$(get_arch)"
 
-  echo "== Updating default ports tree…" >&2
+  printf "${BOLD}== Updating default ports tree…${RESET}\n" >&2
   poudriere ports -u
   echo
 
-  echo "== Updating 14.3-RELEASE jail…" >&2
+  printf "${BOLD}== Updating 14.3-RELEASE jail…${RESET}\n" >&2
   poudriere jail -u -j "143${arch}"
   echo
 
-  echo "== Updating 15.0-RELEASE jail…" >&2
+  printf "${BOLD}== Updating 15.0-RELEASE jail…${RESET}\n" >&2
   poudriere jail -u -j "150${arch}"
   echo
 }
