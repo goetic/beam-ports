@@ -1,21 +1,40 @@
 #!/usr/bin/env sh
 
+BOLD='\033[1m'
+RED='\033[31m'
+RESET='\033[0m'
+
+core_count() {
+  echo "$(lscpu | grep Total | tr -s ' ' | cut -d':' -f 2)"
+}
+
+builder_count() {
+  cores=$(core_count)
+  builders=$(( cores / 4 ))
+  if [ $builders -gt 0 ]; then
+    echo "${builders}"
+  else
+    echo "1"
+  fi
+}
+
 get_arch() {
   echo "$(uname -p)"
 }
 
 main() {
   local arch="$(get_arch)"
+  local builders="$(builder_count)"
 
   ./bin/update
   echo
 
-  echo "== Building 14.3-RELEASE…" >&2
-  poudriere bulk -f packages-default -O beam -j "143${arch}"
+  printf "${BOLD}== Building 14.3-RELEASE…${RESET}\n" >&2
+  poudriere bulk -J ${builders} -f packages-default -O beam -j "143${arch}"
   echo
 
-  echo "== Building 15.0-RELEASE…" >&2
-  poudriere bulk -f packages-default -O beam -j "150${arch}"
+  printf "${BOLD}== Building 15.0-RELEASE…${RESET}\n" >&2
+  poudriere bulk -J ${builders} -f packages-default -O beam -j "150${arch}"
 }
 
 main
