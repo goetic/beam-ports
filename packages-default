@@ -1,6 +1,5 @@
 lang/erlang-28.5
-lang/erlang-28.4.1
-lang/erlang-27.3.4.9
+lang/erlang-27.3.4.11
 lang/elixir-1.19.5-otp-28
 lang/elixir-1.19.4-otp-28
 lang/elixir-1.19.3-otp-28
@@ -11,6 +10,7 @@ lang/elixir-1.18.4-otp-27
 lang/elixir-1.17.3-otp-27
 lang/erlang-28.4.3
 lang/erlang-28.4.2
+lang/erlang-28.4.1
 lang/erlang-28.4
 lang/erlang-28.3.3
 lang/erlang-28.3.1
@@ -23,6 +23,10 @@ lang/erlang-28.0.3
 lang/erlang-28.0.2
 lang/erlang-28.0.1
 lang/erlang-28.0
+lang/erlang-27.3.4.10
+lang/erlang-27.3.4.9
+lang/erlang-27.3.4.8
+lang/erlang-27.3.4.7
 lang/erlang-27.3.4.6
 lang/erlang-27.3.4.5
 lang/erlang-27.3.4.4
