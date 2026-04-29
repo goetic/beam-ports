@@ -1,6 +1,7 @@
 PORTNAME=	elixir
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.18.4
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES+=	https://github.com/elixir-lang/elixir/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/:doc
 PKGNAMESUFFIX=	-1.18.4-otp-27
@@ -13,7 +14,7 @@ WWW=		https://elixir-lang.org/
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	erlang-27.3.4.9>27:lang/erlang-27.3.4.9
+BUILD_DEPENDS=	erlang-27.3.4.11>27:lang/erlang-27.3.4.11
 # RUN_DEPENDS=	erlang-28*>28:lang/erlang-28*
 
 USES=		gmake
@@ -29,7 +30,7 @@ ALL_TARGET=	# empty
 REINPLACE_ARGS=	-i ""
 NO_ARCH=	yes
 MAKE_ENV+=	MAN_PREFIX=${PREFIX}/share/man \
-		PATH="${LOCALBASE}/lib/erlang-27.3.4.9/bin:${PATH}"
+		PATH="${LOCALBASE}/lib/erlang-27.3.4.11/bin:${PATH}"
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_SUB=		yes
