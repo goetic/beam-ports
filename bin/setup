@@ -68,11 +68,11 @@ main() {
     printf "${BOLD}== Creating port: beam…                ${RESET}${YELLOW}[skipped]${RESET}\n" >&2
   fi
 
-  if ! echo "${jails}" | grep -q "14.3-RELEASE"; then
-    printf "${BOLD}== Creating jail: 14.3-RELEASE…${RESET}\n" >&2
-    create_jail "14.3-RELEASE" "143${arch}" "${jail_arch}"
+  if ! echo "${jails}" | grep -q "14.4-RELEASE"; then
+    printf "${BOLD}== Creating jail: 14.4-RELEASE…${RESET}\n" >&2
+    create_jail "14.4-RELEASE" "144${arch}" "${jail_arch}"
   else
-    printf "${BOLD}== Creating jail: 14.3-RELEASE…        ${RESET}${YELLOW}[skipped]${RESET}\n" >&2
+    printf "${BOLD}== Creating jail: 14.4-RELEASE…        ${RESET}${YELLOW}[skipped]${RESET}\n" >&2
   fi
 
   if ! echo "${jails}" | grep -q "15.0-RELEASE"; then

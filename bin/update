@@ -15,8 +15,8 @@ main() {
   poudriere ports -u
   echo
 
-  printf "${BOLD}== Updating 14.3-RELEASE jail…${RESET}\n" >&2
-  poudriere jail -u -j "143${arch}"
+  printf "${BOLD}== Updating 14.4-RELEASE jail…${RESET}\n" >&2
+  poudriere jail -u -j "144${arch}"
   echo
 
   printf "${BOLD}== Updating 15.0-RELEASE jail…${RESET}\n" >&2
