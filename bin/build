@@ -33,8 +33,8 @@ main() {
   poudriere bulk -J ${builders} -f packages-default -O beam -j "144${arch}"
   echo
 
-  printf "${BOLD}== Building 15.0-RELEASE…${RESET}\n" >&2
-  poudriere bulk -J ${builders} -f packages-default -O beam -j "150${arch}"
+  printf "${BOLD}== Building 15.1-RELEASE…${RESET}\n" >&2
+  poudriere bulk -J ${builders} -f packages-default -O beam -j "151${arch}"
 }
 
 main

@@ -19,8 +19,8 @@ main() {
   poudriere jail -u -j "144${arch}"
   echo
 
-  printf "${BOLD}== Updating 15.0-RELEASE jail…${RESET}\n" >&2
-  poudriere jail -u -j "150${arch}"
+  printf "${BOLD}== Updating 15.1-RELEASE jail…${RESET}\n" >&2
+  poudriere jail -u -j "151${arch}"
   echo
 }
 
