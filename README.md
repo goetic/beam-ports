@@ -46,21 +46,22 @@ pkg search elixir
 
 ## Development
 
-``` shell
-poudriere jail -c -j 143amd64 -v 14.3-RELEASE -a amd64
-poudriere jail -c -j 143aarch64 -v 14.3-RELEASE -a arm64.aarch64
+All development steps must be run as root.
 
-poudriere ports -c
+``` shell
+./bin/setup
+
 poudriere ports -c -f beam -m null -M /workspace/github/goetic/beam-ports -p beam
+
+./bin/update
 ```
 
 ``` shell
-poudriere bulk -j 143amd64 -O beam -f packages-default
+./bin/build
 ```
 
 ``` shell
-poudriere pkgclean -A -j <jail>
-poudriere logclean -a -j <jail>
+./bin/clean
 ```
 
 ## Adding versions
